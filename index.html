@@ -3,18 +3,22 @@
 <head>
   <meta charset="UTF-8" />
   <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
-  <script type="module" src="./main.js"></script>
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://unpkg.com/three@0.164.0/build/three.module.js"
+      }
+    }
+  </script>
 </head>
 <body>
+  <script type="module" src="./main.js"></script>
   <a-scene id="main" shadow="type: pcfsoft" light="defaultLightsEnabled: false">
-    
-    <a-sky id="bgsky" src="#sky"></a-sky>
 
-    <a-entity light="type: directional; color: #f2dcc2; intensity: 1.5; shadowMapHeight:4096; shadowMapWidth:4096; castShadow: true; shadowCameraBottom:-15; shadowCameraTop:15; shadowCameraRight:21; shadowCameraLeft:-21; shadowBias:-0.0001;" position="-10 10 -10"></a-entity>
-    <a-entity light="type:ambient; color:gray;"></a-entity>
+    <a-entity light="type: directional; color: #f2dcc2; intensity: 1; shadowMapHeight:4096; shadowMapWidth:4096; castShadow: true; shadowCameraBottom:-1; shadowCameraTop:10; shadowCameraRight:21; shadowCameraLeft:-25; shadowBias:-0.0001;" position="4 1 10"></a-entity>
 
     <a-assets>
-      <a-asset-item id="suiban" src="./resource/suiban_c.glb"></a-gltf-model>
+      <a-asset-item id="suiban" src="./resource/suiban_c.glb"></a-asset-item>
       <img id="sky" src="./resource/bg.png" alt="sky">
     </a-assets>
   
